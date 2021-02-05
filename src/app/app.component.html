@@ -1,0 +1,27 @@
+<h1>
+  {{ obs | async }}
+</h1>
+
+<hello (monEvt)="a = $event"></hello>
+<hello [nom]="name.length.toString()"
+       (monEvt)="b = $event"
+></hello>
+
+<p>
+  a + b = {{a + b}}
+</p>
+
+
+<p>
+  Start editing to see some magic happen :)
+</p>
+<p [class.long] = "(obs | async) % 2 === 1">
+  Voyons ce qu'il y a dans name : 
+  "{{name}}" qui fait {{name.length}} octets.
+</p>
+ 
+<input [(ngModel)]="name"/>
+
+<button (click) = "name = 'boing !!!' ">
+  BOING
+</button>
